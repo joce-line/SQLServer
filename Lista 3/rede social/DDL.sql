@@ -23,10 +23,12 @@ CREATE TABLE Comunidades(
 CREATE TABLE Post(
 	Id INT PRIMARY KEY IDENTITY NOT NULL,
 	Titulo VARCHAR(50) NOT NULL,
-	Imagem VARCHAR(50) NULL,
+	Imagem VARCHAR(200) NULL,
 	Descricao VARCHAR(100) NOT NULL,
-	FK_Usuario INT NULL,
+	FK_Usuario INT NOT NULL,
 	FK_Comunidade INT NOT NULL,
 	FOREIGN KEY (FK_Usuario) REFERENCES Usuarios(Id),
 	FOREIGN KEY (FK_Comunidade) REFERENCES Comunidades(Id)
 )
+
+
