@@ -1,0 +1,23 @@
+--Classificados
+--DDL
+
+CREATE DATABASE db_classificados
+
+USE db_classificados
+
+CREATE TABLE Usuarios(
+	Id INT PRIMARY KEY NOT NULL,
+	Nome VARCHAR(50) NOT NULL,
+	Email VARCHAR(50) NOT NULL,
+	Senha VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE Anuncios(
+	Id INT PRIMARY KEY NOT NULL,
+	Categorias VARCHAR(50) NOT NULL,
+	Descricao VARCHAR(100) NOT NULL,
+	Contato VARCHAR(50) NOT NULL,
+	FK_Usuario INT NOT NULL,
+	FOREIGN KEY (FK_Usuario) REFERENCES Usuarios (Id)
+)
+
